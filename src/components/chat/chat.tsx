@@ -41,7 +41,8 @@ export default function Chat({
   setInput,
 }: ChatProps) {
   return (
-    <div className="flex flex-col justify-between w-full max-w-3xl h-full ">
+    <div className="flex flex-col justify-between w-full max-w-3xl h-full"
+      style={{ backgroundImage: "url('/a.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
       <ChatTopbar
         setSelectedModel={setSelectedModel}
         isLoading={isLoading}

@@ -47,15 +47,15 @@ export default function ChatTopbar({
       if (env === "production") {
         const fetchedModels = await fetch(process.env.NEXT_PUBLIC_OLLAMA_URL + "/api/tags");
         const json = await fetchedModels.json();
-        const apiModels = json.models.map((model : any) => model.name);
+        const apiModels = json.models.map((model: any) => model.name);
         setModels([...apiModels]);
-      } 
+      }
       else {
-        const fetchedModels = await fetch("/api/tags") 
+        const fetchedModels = await fetch("/api/tags")
         const json = await fetchedModels.json();
-        const apiModels = json.models.map((model : any) => model.name);
+        const apiModels = json.models.map((model: any) => model.name);
         setModels([...apiModels]);
-    }
+      }
     }
     fetchModels();
   }, []);
@@ -70,7 +70,7 @@ export default function ChatTopbar({
   };
 
   return (
-    <div className="w-full flex px-4 py-6  items-center justify-between lg:justify-center ">
+    <div className="w-full flex px-4 py-6  items-center justify-between lg:justify-center">
       <Sheet>
         <SheetTrigger>
           <HamburgerMenuIcon className="lg:hidden w-5 h-5" />
@@ -84,6 +84,21 @@ export default function ChatTopbar({
           />
         </SheetContent>
       </Sheet>
+
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button
+            disabled={isLoading}
+            variant="outline"
+            role="a"
+            aria-expanded={open}
+            className="w-[300px] text-center"
+          >
+
+            Calmly.AI
+          </Button>
+        </PopoverTrigger>
+      </Popover>
 
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>

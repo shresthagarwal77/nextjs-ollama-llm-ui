@@ -107,6 +107,7 @@ export function ChatLayout({
       <ResizablePanel
         className="h-full w-full flex justify-center"
         defaultSize={defaultLayout[1]}
+        style={{ backgroundImage: "url('/a.png')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <Chat
           chatId={chatId}
