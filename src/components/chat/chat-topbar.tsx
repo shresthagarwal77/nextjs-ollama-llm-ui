@@ -100,7 +100,7 @@ export default function ChatTopbar({
         </PopoverTrigger>
       </Popover>
 
-      <Popover open={open} onOpenChange={setOpen}>
+      {/* <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
             disabled={isLoading}
@@ -133,7 +133,7 @@ export default function ChatTopbar({
             </Button>
           )}
         </PopoverContent>
-      </Popover>
+      </Popover> */}
     </div>
   );
 }
